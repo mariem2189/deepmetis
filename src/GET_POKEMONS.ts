@@ -25,7 +25,7 @@ export const GET_POKEMONS = gql`
 export const GET_POKEMONS_BY_TYPE = gql`
   query getPokemons($limit: Int, $offset: Int, $filter: String) {
     pokemon_v2_pokemon(limit: $limit, offset: $offset, where: {
-      pokemon_v2_pokemontypes: { pokemon_v2_type: { name: { _eq: $filter } } }
+      pokemon_v2_pokemontypes: { pokemon_v2_type: { name: { _like: $filter } } }
     }
     ) {
       id
@@ -50,7 +50,7 @@ export const GET_POKEMONS_BY_TYPE = gql`
 export const GET_POKEMONS_BY_ABILITY = gql`
   query getPokemons($limit: Int, $offset: Int, $filter: String) {
     pokemon_v2_pokemon(limit: $limit, offset: $offset, where: {
-      pokemon_v2_pokemonabilities: { pokemon_v2_ability: { name: { _eq: $filter } } }
+      pokemon_v2_pokemonabilities: { pokemon_v2_ability: { name: { _like: $filter } } }
     }
     ) {
       id

@@ -15,7 +15,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
         return ser['front_default']
     },[])
   return (
-    <div className="border rounded p-4 shadow">="w-full" /> */}
+    <div className="border rounded p-4 shadow w-full" > 
       <img src={image} alt={pokemon.name} className="w-full" />
       <h3 className="text-xl font-bold">{pokemon.name}</h3>
       <p>Types: {pokemon.pokemon_v2_pokemontypes.map(type => type.pokemon_v2_type.name).join(', ')}</p>
