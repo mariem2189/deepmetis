@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, {useMemo, useState } from 'react';
 import PokemonCard, { Pokemon } from './PokemonCard';
 import { useQuery } from '@apollo/client';
 import { GET_POKEMONS, GET_POKEMONS_BY_ABILITY, GET_POKEMONS_BY_NAME, GET_POKEMONS_BY_TYPE } from './GET_POKEMONS';
@@ -22,7 +22,7 @@ const PokemonList = () => {
     return filter === 'type' ? GET_POKEMONS_BY_TYPE :
       filter === 'ability' ? GET_POKEMONS_BY_ABILITY :
       filter === 'name' ? GET_POKEMONS_BY_NAME : GET_POKEMONS
-  }, [filter, searchTerm])
+  }, [filter])
   const { loading, error, data } = useQuery(QuerySelector, {
     variables: query,
   });
